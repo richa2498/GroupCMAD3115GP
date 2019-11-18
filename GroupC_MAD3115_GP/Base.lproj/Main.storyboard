@@ -31,10 +31,46 @@
                     <view key="view" contentMode="scaleToFill" id="i8o-k6-3rk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5d6-Tq-Rl6">
+                                <rect key="frame" x="20" y="48" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Recipes"/>
+                                    <segment title="with ingredients"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onSegmentChange:" destination="CVn-Th-bL1" eventType="valueChanged" id="bbg-ZF-g5f"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bNm-mP-lfd">
+                                <rect key="frame" x="0.0" y="87" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LY6-hv-SjF">
+                                <rect key="frame" x="0.0" y="143" width="414" height="544"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Wil-AM-OtZ" firstAttribute="trailing" secondItem="5d6-Tq-Rl6" secondAttribute="trailing" constant="20" id="8tH-rn-DBC"/>
+                            <constraint firstItem="5d6-Tq-Rl6" firstAttribute="top" secondItem="Wil-AM-OtZ" secondAttribute="top" constant="4" id="E7J-dn-Po0"/>
+                            <constraint firstItem="LY6-hv-SjF" firstAttribute="leading" secondItem="Wil-AM-OtZ" secondAttribute="leading" id="HNp-IA-MD2"/>
+                            <constraint firstItem="Wil-AM-OtZ" firstAttribute="bottom" secondItem="LY6-hv-SjF" secondAttribute="bottom" id="KFx-Tf-RRZ"/>
+                            <constraint firstItem="bNm-mP-lfd" firstAttribute="leading" secondItem="Wil-AM-OtZ" secondAttribute="leading" id="QcF-1Q-3s0"/>
+                            <constraint firstItem="LY6-hv-SjF" firstAttribute="top" secondItem="bNm-mP-lfd" secondAttribute="bottom" id="QfJ-x3-PSw"/>
+                            <constraint firstItem="bNm-mP-lfd" firstAttribute="trailing" secondItem="Wil-AM-OtZ" secondAttribute="trailing" id="dIU-Yo-a5Q"/>
+                            <constraint firstItem="Wil-AM-OtZ" firstAttribute="trailing" secondItem="LY6-hv-SjF" secondAttribute="trailing" id="fYB-Bj-diN"/>
+                            <constraint firstItem="5d6-Tq-Rl6" firstAttribute="leading" secondItem="Wil-AM-OtZ" secondAttribute="leading" constant="20" id="jI3-Rg-Ppu"/>
+                            <constraint firstItem="bNm-mP-lfd" firstAttribute="top" secondItem="5d6-Tq-Rl6" secondAttribute="bottom" constant="8" id="oPU-2J-1Jg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Wil-AM-OtZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="pLU-ih-wp2"/>
+                    <connections>
+                        <outlet property="searchBar" destination="bNm-mP-lfd" id="i67-RY-bJf"/>
+                        <outlet property="searchTV" destination="LY6-hv-SjF" id="vek-vS-m2k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PvR-kw-O0S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,22 +92,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrz-Q8-diO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="883" y="1091"/>
-        </scene>
-        <!--Ingredients-->
-        <scene sceneID="ruH-m9-C6x">
-            <objects>
-                <viewController title="Ingredients" id="7bx-kM-P35" customClass="IngredientsVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WTD-0g-9CI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="XmQ-lU-Sph"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Ingredients" id="qU8-VG-q1o"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tOJ-2W-M5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="883" y="1805"/>
         </scene>
         <!--Home-->
         <scene sceneID="MFM-OJ-7f9">
@@ -106,7 +126,6 @@
                         <segue destination="wWi-9n-EwP" kind="relationship" relationship="viewControllers" id="RmK-2Z-mDc"/>
                         <segue destination="CVn-Th-bL1" kind="relationship" relationship="viewControllers" id="idO-gJ-R0Y"/>
                         <segue destination="bqJ-Kp-RvF" kind="relationship" relationship="viewControllers" id="Lbw-AY-aU7"/>
-                        <segue destination="7bx-kM-P35" kind="relationship" relationship="viewControllers" id="GhX-fh-xn2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPZ-hP-tgl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
