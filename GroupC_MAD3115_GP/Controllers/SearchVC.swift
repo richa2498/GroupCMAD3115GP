@@ -33,6 +33,12 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTV.allowsMultipleSelection = true
+        searchBar.isHidden = true
+        search_btn.isHidden = false
+        add_Ingradient.isHidden = false
+        segment_search.selectedSegmentIndex = 1
+        
         start()
     }
     
@@ -55,6 +61,9 @@ class SearchVC: UIViewController {
             searchTV.allowsMultipleSelection = false
             search_btn.isHidden = true
             add_Ingradient.isHidden = true
+            searchBar.isHidden = false
+            tableData = recipe_List
+            
             
             
         }
@@ -62,7 +71,11 @@ class SearchVC: UIViewController {
             searchTV.allowsMultipleSelection = true
             search_btn.isHidden = false
             add_Ingradient.isHidden = false
+            searchBar.isHidden = true
+            tableData = Ingradients_List
+            
         }
+        searchTV.reloadData()
         
         
     }
