@@ -45,6 +45,16 @@ class SearchVC: UIViewController {
     //  MARK: Actions
     @IBAction func onSegmentChange(_ sender: UISegmentedControl) {
         
+        if sender.selectedSegmentIndex == 0{
+            
+            searchTV.allowsMultipleSelection = false
+            
+        }
+        else{
+            searchTV.allowsMultipleSelection = true
+        }
+        
+        
     }
     
     func fetchRecipes(searchFor: String) {
@@ -83,6 +93,8 @@ class SearchVC: UIViewController {
     
         addIngradientAlert()
     }
+    
+    
     
     func addIngradientAlert(){
         
@@ -172,8 +184,10 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = searchTV.dequeueReusableCell(withIdentifier: "RecipeCell"){
-            
+        //IngradientCell
+        
+        let id = segment_search.selectedSegmentIndex == 0 ? "RecipeCell" : "IngradientCell"
+        if let cell = searchTV.dequeueReusableCell(withIdentifier: id){
             
             var data = tableData[indexPath.row]
             
@@ -186,6 +200,16 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if segment_search.selectedSegmentIndex == 1{
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark}
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if segment_search.selectedSegmentIndex == 1{
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none}
     }
     
     
