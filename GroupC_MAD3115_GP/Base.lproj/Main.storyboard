@@ -129,8 +129,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="pLU-ih-wp2"/>
                     <connections>
+                        <outlet property="add_Ingradient" destination="ojn-qW-DXs" id="JR0-9F-POV"/>
                         <outlet property="searchBar" destination="bNm-mP-lfd" id="i67-RY-bJf"/>
                         <outlet property="searchTV" destination="LY6-hv-SjF" id="vek-vS-m2k"/>
+                        <outlet property="search_btn" destination="YzR-iA-Iup" id="Lni-2b-sPs"/>
                         <outlet property="segment_search" destination="5d6-Tq-Rl6" id="9ZO-nb-yXj"/>
                     </connections>
                 </viewController>

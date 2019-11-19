@@ -12,6 +12,11 @@ import UIKit
 class SearchVC: UIViewController {
 
     //  MARK: Outlets
+    
+    
+    @IBOutlet weak var search_btn: UIButton!
+    @IBOutlet weak var add_Ingradient: UIButton!
+    
     @IBOutlet weak var segment_search: UISegmentedControl!
     @IBOutlet weak var searchTV: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -48,10 +53,15 @@ class SearchVC: UIViewController {
         if sender.selectedSegmentIndex == 0{
             
             searchTV.allowsMultipleSelection = false
+            search_btn.isHidden = true
+            add_Ingradient.isHidden = true
+            
             
         }
         else{
             searchTV.allowsMultipleSelection = true
+            search_btn.isHidden = false
+            add_Ingradient.isHidden = false
         }
         
         
@@ -62,7 +72,7 @@ class SearchVC: UIViewController {
             
             URLSession.shared.dataTask(with: url){ (data, response, error) in
                 guard data == nil else {
-                    if let strData = String(data: data!, encoding: .utf8){
+                    if let _ = String(data: data!, encoding: .utf8){
                             
                         do {
                                 let recipes = try JSONDecoder().decode(Recipes.self, from: data!)
