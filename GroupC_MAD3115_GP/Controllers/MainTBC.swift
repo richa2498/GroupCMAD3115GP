@@ -12,7 +12,7 @@ class MainTBC: UITabBarController {
 
     //  MARK: Outlets
     @IBOutlet weak var navBar: UINavigationItem!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 

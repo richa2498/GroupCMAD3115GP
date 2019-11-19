@@ -10,30 +10,39 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var home: UITabBarItem!
+    @IBOutlet weak var desert_img: UIImageView!
+    @IBOutlet weak var morning_img: UIImageView!
     @IBOutlet weak var evening: UILabel!
     @IBOutlet weak var morning: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // Do any additional setup after loading the view.
-
            // Fade out to set the text
-              UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-              self.morning.alpha = 0.0
-                   self.evening.alpha = 0.0
-              }, completion: {
-                  (finished: Bool) -> Void in
-   
-                  //Once the label is completely invisible, set the text and fade it back in
-   
-                  // Fade in
-                UIView.animate(withDuration: 2.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                      self.morning.alpha = 2.0
-                    self.evening.alpha = 2.0
-                      }, completion: nil)
-          })
+              
       }
-   
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                   self.morning.alpha = 0.0
+                   self.evening.alpha = 0.0
+                   self.morning_img.alpha = 0.0
+                   self.desert_img.alpha = 0.0
+                    
+                   }, completion: {
+                       (finished: Bool) -> Void in
+        
+                       //Once the label is completely invisible, set the text and fade it back in
+        
+                       // Fade in
+                     UIView.animate(withDuration: 2.0, delay: 2.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                           self.morning.alpha = 2.0
+                           self.evening.alpha = 2.0
+                           self.morning_img.alpha = 2.0
+                           self.desert_img.alpha = 2.0
+                           }, completion: nil)
+               })
+    }
     /*
     // MARK: - Navigation
 
@@ -44,4 +53,12 @@ class HomeVC: UIViewController {
     }
     */
 
+   
 }
+
+
+
+    
+    
+    
+

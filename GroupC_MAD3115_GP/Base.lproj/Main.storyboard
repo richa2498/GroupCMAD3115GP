@@ -208,8 +208,9 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Summer Special">
                                         <attributes>
-                                            <color key="NSColor" red="1" green="0.13211544471149328" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SnellRoundhand-Black"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="20" name="SFMono-Bold"/>
+                                            <font key="NSOriginalFont" size="20" name="Palatino-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -224,10 +225,10 @@
                                 <rect key="frame" x="226" y="225" width="161" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Fall Special">
+                                    <fragment content="&quot;Fall Special&quot;">
                                         <attributes>
-                                            <color key="NSColor" red="0.025886303937210295" green="0.55110508419689119" blue="0.087115878314137529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SnellRoundhand-Black"/>
+                                            <color key="NSColor" red="0.099197742118718554" green="0.42205715673575128" blue="0.037270443880165031" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -238,10 +239,10 @@
                                 <rect key="frame" x="20" y="225" width="161" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Winter Special">
+                                    <fragment content="&quot;Winter Special&quot;">
                                         <attributes>
-                                            <color key="NSColor" red="0.69753886010362698" green="0.32886222567826595" blue="0.13566078441155874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SnellRoundhand-Black"/>
+                                            <color key="NSColor" red="0.66798898959999997" green="0.17490099140000001" blue="0.096504903579999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -278,33 +279,27 @@
                                         <rect key="frame" x="232" y="0.0" width="135" height="112"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="&quot;">
+                                            <fragment content="&quot;Evening mood maker">
                                                 <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="11" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Evening mood maker">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="11" name="MarkerFelt-Thin"/>
-                                                    <font key="NSOriginalFont" size="17" name="MarkerFelt-Thin"/>
+                                                    <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
+                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="🍮">
                                                 <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="11" name="AppleColorEmoji"/>
-                                                    <font key="NSOriginalFont" size="17" name="MarkerFelt-Thin"/>
+                                                    <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="20" name="AppleColorEmoji"/>
+                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="&quot;">
                                                 <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="11" name="MarkerFelt-Thin"/>
+                                                    <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
+                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -368,11 +363,15 @@
                         <viewLayoutGuide key="safeArea" id="b6V-Hv-7Jf"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="house.fill" catalog="system" selectedImage="house.fill" id="2Xn-fU-3hf">
-                        <color key="badgeColor" red="0.00083815369562435891" green="0.033219388091016704" blue="0.21753562176165808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="desert_img" destination="eis-Zr-DJA" id="6Lp-op-8ES"/>
                         <outlet property="evening" destination="Qte-3r-hO9" id="2e2-qO-3Nu"/>
+                        <outlet property="home" destination="2Xn-fU-3hf" id="wfG-mg-4XW"/>
                         <outlet property="morning" destination="tzw-dH-TYL" id="mwU-Ji-KO6"/>
+                        <outlet property="morning_img" destination="06f-mm-ekK" id="LfT-j1-r6o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKw-3j-rsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -408,6 +407,7 @@
     <resources>
         <image name="desert" width="300" height="168"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="house.fill" width="16" height="16"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="monsson" width="318" height="159"/>
         <image name="morning" width="259" height="194"/>
