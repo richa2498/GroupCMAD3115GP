@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PvR-kw-O0S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863.768115942029" y="379.89130434782612"/>
+            <point key="canvasLocation" x="748" y="549"/>
         </scene>
         <!--WebVC-->
         <scene sceneID="a1a-K3-gxI">
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gss-22-3CZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="381"/>
+            <point key="canvasLocation" x="1739" y="549"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="DS9-HU-erm">
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrz-Q8-diO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="883" y="1091"/>
+            <point key="canvasLocation" x="-20" y="1088"/>
         </scene>
         <!--Home-->
         <scene sceneID="MFM-OJ-7f9">
@@ -376,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKw-3j-rsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863.768115942029" y="-278.804347826087"/>
+            <point key="canvasLocation" x="748" y="-192"/>
         </scene>
         <!--MainTBC-->
         <scene sceneID="GdI-gg-kE1">
@@ -407,7 +407,6 @@
     <resources>
         <image name="desert" width="300" height="168"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="house.fill" width="16" height="16"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="monsson" width="318" height="159"/>
         <image name="morning" width="259" height="194"/>

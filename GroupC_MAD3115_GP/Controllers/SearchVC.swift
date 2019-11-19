@@ -21,6 +21,8 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchTV: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    //  MARK: Variables
+    var recipes: Recipes?
     var recipe_List = [String]()
     var URL_List = [String]()
     var Ingradients_List = ["onions","garlic","ice"]//[String]()
@@ -45,10 +47,6 @@ class SearchVC: UIViewController {
         
         //searchTV.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
         //fetchRecipes(searchFor: "?i=onions,garlic")
-        
-        
-        
-        
         
 //        fetchCourses()
     }
@@ -89,8 +87,7 @@ class SearchVC: UIViewController {
                             
                         do {
                                 let recipes = try JSONDecoder().decode(Recipes.self, from: data!)
-
-                                
+                                self.recipes = recipes
                                 recipes.results.forEach { (r) in
                                 
                                 self.recipe_List.append(r.title)
@@ -228,7 +225,6 @@ class SearchVC: UIViewController {
             let selected_row = searchTV.indexPath(for: cell_selected)!.row
             
             for i in recipe_List.indices{
-                
                 if tableData[selected_row] == recipe_List[i]{
                     selected = i
                     
@@ -267,14 +263,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
             else{
                 cell.accessoryType = .none
             }
-            
-            
-            
-            
-            
             return cell
-            
-            
         }
         
         return UITableViewCell()

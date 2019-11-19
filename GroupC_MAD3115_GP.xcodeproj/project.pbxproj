@@ -20,6 +20,7 @@
 		9B38096A23830A0300728D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B38096823830A0300728D58 /* Main.storyboard */; };
 		9B38096C23830A0400728D58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B38096B23830A0400728D58 /* Assets.xcassets */; };
 		9B38096F23830A0400728D58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B38096D23830A0400728D58 /* LaunchScreen.storyboard */; };
+		9BFC16DF2384A3BC005E8F59 /* YTVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFC16DE2384A3BC005E8F59 /* YTVideo.swift */; };
 		F29E48892383AB3D007E014C /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E48882383AB3D007E014C /* WebVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		9B38096B23830A0400728D58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B38096E23830A0400728D58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B38097023830A0400728D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BFC16DE2384A3BC005E8F59 /* YTVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTVideo.swift; sourceTree = "<group>"; };
 		F29E48882383AB3D007E014C /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				832D24672383195000B41039 /* SearchVC.swift */,
 				832D24692383196100B41039 /* FavouriteVC.swift */,
 				F29E48882383AB3D007E014C /* WebVC.swift */,
+				9BFC16DE2384A3BC005E8F59 /* YTVideo.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				832D24722383223A00B41039 /* RecipeCell.swift in Sources */,
 				832D246423830F1700B41039 /* HomeVC.swift in Sources */,
 				9B38096523830A0300728D58 /* AppDelegate.swift in Sources */,
+				9BFC16DF2384A3BC005E8F59 /* YTVideo.swift in Sources */,
 				832D247723832DF000B41039 /* helpers.swift in Sources */,
 				F29E48892383AB3D007E014C /* WebVC.swift in Sources */,
 				832D247923832FC100B41039 /* Recipes.swift in Sources */,
@@ -349,7 +353,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "makeMyDish.GroupC-MAD3115-GP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -368,7 +372,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "makeMyDish.GroupC-MAD3115-GP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
