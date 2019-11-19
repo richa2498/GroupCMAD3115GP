@@ -23,12 +23,10 @@ class SearchVC: UIViewController {
     
     var recipe_List = [String]()
     var URL_List = [String]()
-    var Ingradients_List = [String]()
+    var Ingradients_List = ["onions","garlic","ice"]//[String]()
     
     var tableData = [String]()
     var selected = -1
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +44,9 @@ class SearchVC: UIViewController {
         searchBar.delegate = self
         
         //searchTV.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
-        fetchRecipes(searchFor: "?i=onions,garlic")
+        //fetchRecipes(searchFor: "?i=onions,garlic")
+        
+        
         
         
         
@@ -82,7 +82,7 @@ class SearchVC: UIViewController {
     
     func fetchRecipes(searchFor: String) {
         if let url = URL(string: (BASE_URL + searchFor)) {
-            
+            print(url)
             URLSession.shared.dataTask(with: url){ (data, response, error) in
                 guard data == nil else {
                     if let _ = String(data: data!, encoding: .utf8){
@@ -94,7 +94,7 @@ class SearchVC: UIViewController {
                                 recipes.results.forEach { (r) in
                                 
                                 self.recipe_List.append(r.title)
-                                self.tableData = self.recipe_List
+                                //self.tableData.append(r.title)
                                 self.URL_List.append(r.href)
                                 
                                     
@@ -143,13 +143,10 @@ class SearchVC: UIViewController {
 
             }
             else{
-                
                 self.Ingradients_List.append(item!)
                 self.tableData = self.Ingradients_List
                 self.searchTV.reloadData()
             }
-            
-            
         }
         
          cancel.setValue(UIColor.orange, forKey: "titleTextColor")
@@ -176,6 +173,43 @@ class SearchVC: UIViewController {
     
     @IBAction func searchBtn(_ sender: UIButton) {
         
+        recipe_List = []
+        tableData = []
+        var selected_items = "?i="
+        segment_search.selectedSegmentIndex = 0
+        
+        
+        
+        if let selected_ip = searchTV.indexPathsForSelectedRows{
+        for ip in selected_ip{
+            
+            if ip.row > 0 {selected_items += ","}
+            selected_items += Ingradients_List[ip.row]
+            
+            
+        }
+        
+        fetchRecipes(searchFor: selected_items)
+        
+        let seconds = 1.0 // finding recepies message should be displayed
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            
+            self.searchTV.allowsMultipleSelection = false
+            self.search_btn.isHidden = true
+            self.add_Ingradient.isHidden = true
+            self.searchBar.isHidden = false
+            
+            self.tableData = self.recipe_List
+            
+            self.searchTV.reloadData()
+            
+            }
+            
+        }
+        
+        
+        
         
     }
     
@@ -191,7 +225,16 @@ class SearchVC: UIViewController {
         
         if let cell_selected = sender as? UITableViewCell{
         
-            selected = searchTV.indexPath(for: cell_selected)!.row
+            let selected_row = searchTV.indexPath(for: cell_selected)!.row
+            
+            for i in recipe_List.indices{
+                
+                if tableData[selected_row] == recipe_List[i]{
+                    selected = i
+                    
+                }
+                
+            }
         }
     }
     
@@ -217,6 +260,18 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
             
             data = data.replacingOccurrences(of: "\n", with: "")
             cell.textLabel?.text = data
+            if segment_search.selectedSegmentIndex == 0{
+                cell.accessoryType = .detailButton
+                
+            }
+            else{
+                cell.accessoryType = .none
+            }
+            
+            
+            
+            
+            
             return cell
             
             
@@ -242,14 +297,27 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
 extension SearchVC: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        tableData = recipe_List
-        searchTV.reloadData()
         
+        searchTV.reloadData()
         searchBar.resignFirstResponder()
         
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        tableData = recipe_List
+        searchTV.reloadData()
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tableData = searchText.isEmpty ? recipe_List : recipe_List.filter { (item: String) -> Bool in
+                
+            
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
+            
+            searchTV.reloadData()
+    }
+    
+    
 }
