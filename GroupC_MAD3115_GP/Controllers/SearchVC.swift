@@ -12,11 +12,15 @@ import UIKit
 class SearchVC: UIViewController {
 
     //  MARK: Outlets
+    @IBOutlet weak var segment_search: UISegmentedControl!
     @IBOutlet weak var searchTV: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     var recipe_List = [String]()
     var URL_List = [String]()
+    var Ingradients_List = [String]()
+    
+    var tableData = [String]()
     var selected = -1
     
     
@@ -45,18 +49,19 @@ class SearchVC: UIViewController {
     
     func fetchRecipes(searchFor: String) {
         if let url = URL(string: (BASE_URL + searchFor)) {
-            print(url)
+            
             URLSession.shared.dataTask(with: url){ (data, response, error) in
                 guard data == nil else {
                     if let strData = String(data: data!, encoding: .utf8){
-//                            print(strData)
-                            do {
+                            
+                        do {
                                 let recipes = try JSONDecoder().decode(Recipes.self, from: data!)
-//                                print(recipes)
+
                                 
                                 recipes.results.forEach { (r) in
-                                print(r.title)
+                                
                                 self.recipe_List.append(r.title)
+                                self.tableData = self.recipe_List
                                 self.URL_List.append(r.href)
                                 
                                     
@@ -73,7 +78,71 @@ class SearchVC: UIViewController {
         
         
     }
+    
+    @IBAction func addItem(_ sender: UIButton) {
+    
+        addIngradientAlert()
+    }
+    
+    func addIngradientAlert(){
         
+        let aC = UIAlertController(title: "Add New Ingradient", message: nil, preferredStyle: .alert)
+        
+        
+        aC.addTextField { (nameOfFolder) in
+            nameOfFolder.placeholder = "Enter Ingradient Name"
+        }
+        
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+            let addItem = UIAlertAction(title: "Add", style: .default) { (action) in
+            
+            let item = aC.textFields![0].text
+            var nameTaken: Bool = false
+                for ingradient in self.Ingradients_List{
+                if item == ingradient { nameTaken = true; break }
+            }
+            if nameTaken {
+                
+                self.nameTakenAlert()
+
+            }
+            else{
+                
+                self.Ingradients_List.append(item!)
+                self.tableData = self.Ingradients_List
+                self.searchTV.reloadData()
+            }
+            
+            
+        }
+        
+         cancel.setValue(UIColor.orange, forKey: "titleTextColor")
+         addItem.setValue(UIColor.black, forKey: "titleTextColor")
+        
+         aC.addAction(cancel)
+         aC.addAction(addItem)
+         self.present(aC, animated: true, completion: nil)
+        
+        
+    }
+    
+    func nameTakenAlert(){
+        let nameTakenAlert = UIAlertController(title: "Item already added", message: "Please Enter different Ingradient", preferredStyle: .alert)
+               
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: {(action) in
+            
+        })
+        nameTakenAlert.addAction(ok)
+        ok.setValue(UIColor.orange, forKey: "titleTextColor")
+        self.present(nameTakenAlert, animated: true, completion: nil)
+        return
+    }
+    
+    @IBAction func searchBtn(_ sender: UIButton) {
+        
+        
+    }
     
     // MARK: - Navigation
 
@@ -98,14 +167,17 @@ class SearchVC: UIViewController {
 extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipe_List.count
+        return tableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = searchTV.dequeueReusableCell(withIdentifier: "RecipeCell"){
             
-            var data = recipe_List[indexPath.row]
+            
+            var data = tableData[indexPath.row]
+            
+            
             data = data.replacingOccurrences(of: "\n", with: "")
             cell.textLabel?.text = data
             return cell
@@ -122,8 +194,10 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
 
 extension SearchVC: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        tableData = recipe_List
         searchTV.reloadData()
-        print(recipe_List)
+        
         searchBar.resignFirstResponder()
         
     }
