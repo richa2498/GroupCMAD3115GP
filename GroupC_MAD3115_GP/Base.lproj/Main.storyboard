@@ -77,18 +77,18 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojn-qW-DXs">
-                                <rect key="frame" x="210" y="638" width="188" height="30"/>
+                                <rect key="frame" x="227" y="644" width="157" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title=" Add Ingradient" image="plus.app" catalog="system"/>
                                 <connections>
                                     <action selector="addItem:" destination="CVn-Th-bL1" eventType="touchUpInside" id="rgW-v3-NUg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzR-iA-Iup">
-                                <rect key="frame" x="13" y="638" width="101" height="30"/>
+                                <rect key="frame" x="24" y="644" width="86" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Search" image="magnifyingglass" catalog="system"/>
                                 <connections>
                                     <action selector="searchBtn:" destination="CVn-Th-bL1" eventType="touchUpInside" id="Wnl-Dx-jPZ"/>
@@ -147,7 +147,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9br-5E-O5P"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favourite" id="3om-xD-Uzl"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="3om-xD-Uzl"/>
                     <navigationItem key="navigationItem" id="fwm-Aw-CHh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrz-Q8-diO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -164,7 +164,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="b6V-Hv-7Jf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="2Xn-fU-3hf"/>
+                    <tabBarItem key="tabBarItem" selectedImage="house.fill" catalog="system" id="2Xn-fU-3hf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKw-3j-rsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,6 +195,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="plus.app" catalog="system" width="64" height="56"/>
     </resources>
