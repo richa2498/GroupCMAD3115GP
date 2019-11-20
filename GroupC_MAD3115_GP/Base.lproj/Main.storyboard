@@ -184,7 +184,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3m5-T0-dad" kind="show" id="MUg-Yw-5j3"/>
+                                            <segue destination="3m5-T0-dad" kind="show" trigger="accessoryAction" id="ZCd-d5-HWf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -542,6 +542,6 @@
         <image name="winter" width="254" height="198"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fKg-NI-6zG"/>
+        <segue reference="ZCd-d5-HWf"/>
     </inferredMetricsTieBreakers>
 </document>

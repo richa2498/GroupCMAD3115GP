@@ -48,13 +48,14 @@ class SearchVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        /*
         searchTV.allowsMultipleSelection = true
         searchBar.isHidden = true
         search_btn.isHidden = false
         add_Ingradient.isHidden = false
         segment_search.selectedSegmentIndex = 1
         
-        start()
+        start()*/
     }
     
 
@@ -306,7 +307,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
                 
                 fvt.fvt_recepie.append(tableData[indexPath.row])
                 
-                
                 for i in recipe_List.indices{
                     if recipe_List[i] == tableData[indexPath.row]{
                         
@@ -370,6 +370,7 @@ extension SearchVC: UISearchBarDelegate{
                             self.url = URL(string: recipes.results.first!.href)
                             print("recipeTBC: \(url)")
                             } catch{
+                    
                                 print(error)
                             }
                     }

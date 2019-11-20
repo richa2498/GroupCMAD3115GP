@@ -11,6 +11,7 @@ import UIKit
 class RecipeTBC: UITabBarController {
 
     var searchVC: SearchVC?
+    var fvtVC: FavouriteVC?
     var url: URL?
     var nameOfRecipe: String?
     var ytVideo: YTVideo?

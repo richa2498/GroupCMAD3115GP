@@ -58,6 +58,18 @@ class FavouriteVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if let fvtCell = sender as? UITableViewCell{
+            
+        fvt_currIndex = fvt_TV.indexPath(for: fvtCell)!.row
+        }
+        
+        if let recipeTBC = segue.destination as? RecipeTBC{
+            recipeTBC.fvtVC = self
+            recipeTBC.url = URL(string: fvt.fvt_URL[fvt_currIndex])
+            recipeTBC.nameOfRecipe = fvt.fvt_recepie[fvt_currIndex]
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
