@@ -42,6 +42,8 @@ class SearchVC: UIViewController {
     
     func start() {
         searchBar.delegate = self
+        tableData = Ingradients_List
+        searchTV.reloadData()
         
         //searchTV.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
         //fetchRecipes(searchFor: "?i=onions,garlic")
@@ -253,8 +255,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //IngradientCell
         
         let id = segment_search.selectedSegmentIndex == 0 ? "RecipeCell" : "IngradientCell"
         if let cell = searchTV.dequeueReusableCell(withIdentifier: id){

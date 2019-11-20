@@ -64,10 +64,10 @@
                                                     <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0032703481340000001" green="0.096575056490000005" blue="0.087732296589999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" textLabel="upg-Mi-s7V" style="IBUITableViewCellStyleDefault" id="pkb-f2-5te">
                                         <rect key="frame" x="0.0" y="71.666667938232422" width="414" height="43.666667938232422"/>
@@ -85,7 +85,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="zPz-AT-vnR" kind="show" trigger="accessoryAction" id="SLQ-Th-qBk"/>
                                         </connections>
@@ -157,7 +157,6 @@
         <!--WebVC-->
         <scene sceneID="a1a-K3-gxI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gss-22-3CZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="zPz-AT-vnR" customClass="WebVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FXJ-Jt-HFb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -216,6 +215,7 @@
                         <outlet property="website_View" destination="TIS-Oq-khO" id="dpY-P0-0my"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gss-22-3CZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566.6666666666667" y="557.60869565217399"/>
         </scene>
