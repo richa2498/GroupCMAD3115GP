@@ -23,7 +23,7 @@ class SearchVC: UIViewController {
     
     var recipe_List = [String]()
     var URL_List = [String]()
-    var Ingradients_List = ["onions","garlic","ice"]//[String]()
+    var Ingradients_List = ["onions","garlic","ice","potato","tomato"]//[String]()
     
     var tableData = [String]()
     var selected = -1
@@ -44,23 +44,26 @@ class SearchVC: UIViewController {
         searchBar.delegate = self
         tableData = Ingradients_List
         searchTV.reloadData()
-        
-        //searchTV.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
-        //fetchRecipes(searchFor: "?i=onions,garlic")
-        
-        
-        
-        
-        
-//        fetchCourses()
+    
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        searchTV.allowsMultipleSelection = true
+        searchBar.isHidden = true
+        search_btn.isHidden = false
+        add_Ingradient.isHidden = false
+        segment_search.selectedSegmentIndex = 1
+        
+        start()
+    }
+    
 
     //  MARK: Actions
     @IBAction func onSegmentChange(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0{
             
-            searchTV.allowsMultipleSelection = false
+            
             search_btn.isHidden = true
             add_Ingradient.isHidden = true
             searchBar.isHidden = false
@@ -70,7 +73,7 @@ class SearchVC: UIViewController {
             
         }
         else{
-            searchTV.allowsMultipleSelection = true
+            
             search_btn.isHidden = false
             add_Ingradient.isHidden = false
             searchBar.isHidden = true
@@ -81,6 +84,8 @@ class SearchVC: UIViewController {
         
         
     }
+    
+    
     
     func fetchRecipes(searchFor: String) {
         if let url = URL(string: (BASE_URL + searchFor)) {
@@ -201,7 +206,7 @@ class SearchVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             
-            self.searchTV.allowsMultipleSelection = false
+            
             self.search_btn.isHidden = true
             self.add_Ingradient.isHidden = true
             self.searchBar.isHidden = false
@@ -227,6 +232,7 @@ class SearchVC: UIViewController {
         // Pass the selected object to the new view controller.
         if let web = segue.destination as? WebVC{
             web.d_search = self
+            web.source = "search"
         }
         
         if let cell_selected = sender as? UITableViewCell{
@@ -262,10 +268,11 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
             var data = tableData[indexPath.row]
             
             
-            data = data.replacingOccurrences(of: "\n", with: "")
+            //data = data.replacingOccurrences(of: "\n", with: "")
             cell.textLabel?.text = data
             if segment_search.selectedSegmentIndex == 0{
                 cell.accessoryType = .detailButton
+                cell.imageView?.image = UIImage(named: "fvt")
                 
             }
             else{
@@ -287,11 +294,57 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if segment_search.selectedSegmentIndex == 1{
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark}
-    }
+        else{
+            tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "fvt_2")
+            
+            var isFav = false
+            
+            for f in fvt.fvt_recepie{
+                
+                if f == tableData[indexPath.row]{
+                    isFav = true
+                    break
+                }
+                
+                
+                
+            }
+            
+            if !isFav{
+                
+                fvt.fvt_recepie.append(tableData[indexPath.row])
+                
+                
+                for i in recipe_List.indices{
+                    if recipe_List[i] == tableData[indexPath.row]{
+                        
+                        fvt.fvt_URL.append(URL_List[i])
+                        
+                    }
+                }
+                
+            }
+                
+            }
+            
+        }
+    
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if segment_search.selectedSegmentIndex == 1{
             tableView.cellForRow(at: indexPath)?.accessoryType = .none}
+        else{
+            tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "fvt")
+            
+            for i in fvt.fvt_recepie.indices{
+                
+                if (tableData[indexPath.row] == fvt.fvt_recepie[i]){
+                    fvt.fvt_recepie.remove(at: i); break}
+                
+            }
+            
+            
+        }
     }
     
     

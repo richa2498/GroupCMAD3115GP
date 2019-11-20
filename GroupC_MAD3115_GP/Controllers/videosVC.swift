@@ -26,6 +26,8 @@ class videosVC: UIViewController {
         let web_view = WKWebView(frame: view.frame)
         view.addSubview(web_view)
         let url = URL(string: YT_url)
+        
+        
         let request = URLRequest(url: url!)
         web_view.load(request)
         

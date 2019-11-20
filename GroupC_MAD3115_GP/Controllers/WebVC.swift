@@ -12,23 +12,41 @@ import WebKit
 class WebVC: UIViewController {
     
     var d_search: SearchVC?
-    var ytVideo: YTVideo?
+    var d_fvt: FavouriteVC?
+    //var ytVideo: YTVideo?
     var nameofRecipe: String?
-        
+    var source: String?
     @IBOutlet weak var website_View: UIView!
     override func viewDidLoad() {
             super.viewDidLoad()
+            
             start()
-        nameofRecipe = (d_search?.tableData[d_search!.selected])!
+        
             // Do any additional setup after loading the view.
         }
         
         func start() {
+            
+            
             let web_view = WKWebView(frame: website_View.frame)
             view.addSubview(web_view)
-            let url = URL(string: (d_search?.URL_List[d_search!.selected])!)
+            var url: URL?
+            if source == "search"{
+                url = URL(string: (d_search?.URL_List[d_search!.selected])!)!
+                
+                
+            }
+            else{
+                
+                url = URL(string: fvt.fvt_URL[d_fvt!.fvt_currIndex])
+            
+            }
+            
+            
             let request = URLRequest(url: url!)
             web_view.load(request)
+            
+            nameofRecipe = (source == "search") ? (d_search?.tableData[d_search!.selected])! : fvt.fvt_recepie[d_fvt!.fvt_currIndex]
              
             //fetchVideos(nameOfRecipe: nameOfRecipe!)
         }
