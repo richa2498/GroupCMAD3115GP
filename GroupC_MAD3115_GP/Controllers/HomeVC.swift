@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
               
       }
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                    self.morning.alpha = 0.0
                    self.evening.alpha = 0.0
                    self.morning_img.alpha = 0.0
@@ -35,11 +35,11 @@ class HomeVC: UIViewController {
                        //Once the label is completely invisible, set the text and fade it back in
         
                        // Fade in
-                     UIView.animate(withDuration: 2.0, delay: 2.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                           self.morning.alpha = 2.0
-                           self.evening.alpha = 2.0
-                           self.morning_img.alpha = 2.0
-                           self.desert_img.alpha = 2.0
+                    UIView.animate(withDuration: 2.0, delay: 2.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                           self.morning.alpha = 1.0
+                           self.evening.alpha = 1.0
+                           self.morning_img.alpha = 1.0
+                           self.desert_img.alpha = 1.0
                            }, completion: nil)
                })
     }
@@ -52,8 +52,6 @@ class HomeVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-   
 }
 
 
