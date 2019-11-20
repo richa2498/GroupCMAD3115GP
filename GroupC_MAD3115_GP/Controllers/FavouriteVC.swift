@@ -61,16 +61,16 @@ class FavouriteVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        if let wV = segue.destination as? WebVC{
-            wV.d_fvt = self
-            
-            wV.source = "fvt"
-            
-            if let fvtCell = sender as? UITableViewCell{
-                fvt_currIndex = fvt_TV.indexPath(for: fvtCell)!.row
-                
-            }
-        }
+//        if let wV = segue.destination as? WebVC{
+//            wV.d_fvt = self
+//            
+//            wV.source = "fvt"
+//            
+//            if let fvtCell = sender as? UITableViewCell{
+//                fvt_currIndex = fvt_TV.indexPath(for: fvtCell)!.row
+//                
+//            }
+//        }
         
     }
     

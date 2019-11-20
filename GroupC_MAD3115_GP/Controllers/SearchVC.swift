@@ -11,8 +11,8 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    var url: URL?
     //  MARK: Outlets
-    
     
     @IBOutlet weak var search_btn: UIButton!
     @IBOutlet weak var add_Ingradient: UIButton!
@@ -63,14 +63,11 @@ class SearchVC: UIViewController {
         
         if sender.selectedSegmentIndex == 0{
             
-            
             search_btn.isHidden = true
             add_Ingradient.isHidden = true
             searchBar.isHidden = false
             tableData = recipe_List
-            
-            
-            
+             
         }
         else{
             
@@ -84,9 +81,7 @@ class SearchVC: UIViewController {
         
         
     }
-    
-    
-    
+   
     func fetchRecipes(searchFor: String) {
         if let url = URL(string: (BASE_URL + searchFor)) {
             print(url)
@@ -122,13 +117,10 @@ class SearchVC: UIViewController {
         
     }
     
-    
     @IBAction func addItem(_ sender: UIButton) {
     
         addIngradientAlert()
     }
-    
-    
     
     func addIngradientAlert(){
         
@@ -230,10 +222,10 @@ class SearchVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if let web = segue.destination as? WebVC{
-            web.d_search = self
-            web.source = "search"
-        }
+//        if let web = segue.destination as? WebVC{
+//            web.d_search = self
+//            web.source = "search"
+//        }
         
         if let cell_selected = sender as? UITableViewCell{
         
@@ -247,6 +239,12 @@ class SearchVC: UIViewController {
                 }
                 
             }
+        }
+        
+        if let recipeTBC = segue.destination as? RecipeTBC{
+            recipeTBC.searchVC = self
+            recipeTBC.url = URL(string: URL_List[selected])
+            recipeTBC.nameOfRecipe = tableData[selected]
         }
     }
     
@@ -265,7 +263,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         let id = segment_search.selectedSegmentIndex == 0 ? "RecipeCell" : "IngradientCell"
         if let cell = searchTV.dequeueReusableCell(withIdentifier: id){
             
-            var data = tableData[indexPath.row]
+            let data = tableData[indexPath.row]
             
             
             //data = data.replacingOccurrences(of: "\n", with: "")
@@ -278,10 +276,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
             else{
                 cell.accessoryType = .none
             }
-            
-            
-            
-            
             
             return cell
             
@@ -305,9 +299,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
                     isFav = true
                     break
                 }
-                
-                
-                
+               
             }
             
             if !isFav{
@@ -350,13 +342,41 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
 }
 
-
+//  Searchbar delegates & datasource
 extension SearchVC: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        
         searchTV.reloadData()
         searchBar.resignFirstResponder()
+        
+        guard let recipeTBC: RecipeTBC = self.storyboard?.instantiateViewController(withIdentifier: "RecipeTBC") as? RecipeTBC else { return }
+        self.fetchRecipeByName(searchFor: "?i=&q=\(searchBar.text!)")
+        recipeTBC.nameOfRecipe = searchBar.text
+        recipeTBC.url = self.url
+        let navController = UINavigationController(rootViewController: recipeTBC)
+
+        self.navigationController?.present(navController, animated: true, completion: nil)
+    }
+    
+    func fetchRecipeByName(searchFor: String) {
+        if let url = URL(string: (BASE_URL + searchFor)) {
+            print(url)
+            URLSession.shared.dataTask(with: url){ (data, response, error) in
+                guard data == nil else {
+                    if let _ = String(data: data!, encoding: .utf8){
+                            
+                        do {
+                                let recipes = try JSONDecoder().decode(Recipes.self, from: data!)
+
+                            self.url = URL(string: recipes.results.first!.href)
+                            print("recipeTBC: \(url)")
+                            } catch{
+                                print(error)
+                            }
+                    }
+                    return
+                }
+            }.resume()
+        }
         
     }
     

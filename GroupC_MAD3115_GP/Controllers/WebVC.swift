@@ -11,82 +11,39 @@ import WebKit
 
 class WebVC: UIViewController {
     
-    var d_search: SearchVC?
-    var d_fvt: FavouriteVC?
-    //var ytVideo: YTVideo?
+    var searchVC: SearchVC?
+    var url: URL?
     var nameofRecipe: String?
-    var source: String?
+    var webView: WKWebView?
+        
     @IBOutlet weak var website_View: UIView!
     override func viewDidLoad() {
             super.viewDidLoad()
-            
+        print("WEBVC: ",url)
+            webView = WKWebView(frame: website_View.frame)
+            view.addSubview(webView!)
             start()
-        
+//            nameofRecipe = (searchVC?.tableData[searchVC!.selected])!
             // Do any additional setup after loading the view.
-        }
+    }
         
         func start() {
-            
-            
-            let web_view = WKWebView(frame: website_View.frame)
-            view.addSubview(web_view)
-            var url: URL?
-            if source == "search"{
-                url = URL(string: (d_search?.URL_List[d_search!.selected])!)!
-                
-                
+            DispatchQueue.main.async {
+                if self.url != nil{
+                    let request = URLRequest(url: self.url!)
+                    self.webView!.load(request)
+                }else{
+                    print("empty url")
+                }
             }
-            else{
-                
-                url = URL(string: fvt.fvt_URL[d_fvt!.fvt_currIndex])
-            
-            }
-            
-            
-            let request = URLRequest(url: url!)
-            web_view.load(request)
-            
-            nameofRecipe = (source == "search") ? (d_search?.tableData[d_search!.selected])! : fvt.fvt_recepie[d_fvt!.fvt_currIndex]
              
             //fetchVideos(nameOfRecipe: nameOfRecipe!)
         }
 // https://www.youtube.com/results?search_query=chocolate+chip+cookies+recipe
-    /*
-        func fetchVideos(nameOfRecipe: String) {
-            if let url = URL(string: (BASE_YT_URL_Prefix+"&q="+"sandwich"+BASE_YT_URL2_Suffix)) {
-            print(url)
-            URLSession.shared.dataTask(with: url){ (data, response, error) in
-                guard data == nil else {
-                    if let _ = String(data: data!, encoding: .utf8){
-
-                        do {
-                                let ytVideo = try JSONDecoder().decode(YTVideo.self, from: data!)
-                                self.
-                                ytVideo.items.forEach { (i) in
-                                print(i.snippet.title)
-
-                        }
-                        } catch{
-                            print(error)
-                        }
-                    }
-                    return
-                }
-            }.resume()
-        }
-        }*/
         
          //MARK: - Navigation
 
-        // In a storyboard-based application, you will often want to do a little preparation before navigation
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Get the new view controller using segue.destination.
-            // Pass the selected object to the new view controller.
-            if let video = segue.destination as? videosVC{
-                video.d_Web = self
-                
-                
-            }
             
         }
         

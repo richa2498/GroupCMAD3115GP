@@ -87,7 +87,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <segue destination="zPz-AT-vnR" kind="show" trigger="accessoryAction" id="SLQ-Th-qBk"/>
+                                            <segue destination="3m5-T0-dad" kind="show" trigger="accessoryAction" id="fKg-NI-6zG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -154,89 +154,6 @@
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="548.64130434782612"/>
         </scene>
-        <!--WebVC-->
-        <scene sceneID="a1a-K3-gxI">
-            <objects>
-                <viewController id="zPz-AT-vnR" customClass="WebVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FXJ-Jt-HFb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIS-Oq-khO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="598"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gK2-rZ-s4w">
-                                <rect key="frame" x="295" y="640" width="119" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.011909644800000001" green="0.018933008970000002" blue="0.2291126943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.011909644800000001" green="0.018933008970000002" blue="0.2291126943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Video">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="17" name="MarkerFelt-Thin"/>
-                                                <font key="NSOriginalFont" size="17" name="MarkerFelt-Thin"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="s ">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="17" name="MarkerFelt-Thin"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="📹">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="17" name="AppleColorEmoji"/>
-                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <segue destination="ThK-yl-V9G" kind="show" id="Axo-84-gmQ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="bRy-c1-H59"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="88Z-F2-xWB">
-                        <barButtonItem key="backBarButtonItem" title="Recipie" id="0XT-s2-H2g"/>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="website_View" destination="TIS-Oq-khO" id="dpY-P0-0my"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gss-22-3CZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1563.768115942029" y="548.64130434782612"/>
-        </scene>
-        <!--Videos-->
-        <scene sceneID="V31-i1-5OX">
-            <objects>
-                <viewController id="ThK-yl-V9G" customClass="videosVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="j7M-Ds-8Ob">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="XJK-cC-0wu"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Videos" largeTitleDisplayMode="always" id="wGV-wa-DIi">
-                        <barButtonItem key="backBarButtonItem" title="Recipie" id="obb-bM-URv"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qNc-kq-Rma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2386" y="551"/>
-        </scene>
         <!--Favourites-->
         <scene sceneID="DS9-HU-erm">
             <objects>
@@ -267,7 +184,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="zPz-AT-vnR" kind="show" trigger="accessoryAction" id="G8j-4H-Ito"/>
+                                            <segue destination="3m5-T0-dad" kind="show" id="MUg-Yw-5j3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -509,6 +426,109 @@
             </objects>
             <point key="canvasLocation" x="-20" y="51"/>
         </scene>
+        <!--Recipe-->
+        <scene sceneID="k60-nI-575">
+            <objects>
+                <viewController id="I9i-1a-ivO" customClass="WebVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="52W-E8-CAt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-at-BPe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u5F-at-BPe" firstAttribute="trailing" secondItem="G9b-9J-Y21" secondAttribute="trailing" id="41d-Fz-jp6"/>
+                            <constraint firstItem="G9b-9J-Y21" firstAttribute="bottom" secondItem="u5F-at-BPe" secondAttribute="bottom" id="68B-XT-fHI"/>
+                            <constraint firstItem="u5F-at-BPe" firstAttribute="top" secondItem="G9b-9J-Y21" secondAttribute="top" id="Sjg-VP-gb5"/>
+                            <constraint firstItem="u5F-at-BPe" firstAttribute="leading" secondItem="G9b-9J-Y21" secondAttribute="leading" id="SzK-gD-qc5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G9b-9J-Y21"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Recipe" id="QWC-3U-xvS"/>
+                    <navigationItem key="navigationItem" id="sWy-dk-c2b">
+                        <barButtonItem key="backBarButtonItem" title="Recipie" id="E6T-j3-hDS"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="website_View" destination="u5F-at-BPe" id="Lc7-XI-Nbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zY3-d9-7lL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2525" y="549"/>
+        </scene>
+        <!--Videos-->
+        <scene sceneID="haP-q2-jxt">
+            <objects>
+                <tableViewController id="J7P-gV-ymM" customClass="VideosTVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QmO-Nd-7eE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" id="ZKy-Hb-mHl">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZKy-Hb-mHl" id="rRT-go-Uuh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pvf-0K-Ckk" kind="show" id="8yj-RB-Ot1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J7P-gV-ymM" id="lHX-ZU-UZQ"/>
+                            <outlet property="delegate" destination="J7P-gV-ymM" id="bz7-Yn-gBV"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Videos" id="3qi-F1-UlU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXN-4I-mXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3361" y="549"/>
+        </scene>
+        <!--PlayerVC-->
+        <scene sceneID="jZL-rg-pga">
+            <objects>
+                <viewController id="pvf-0K-Ckk" customClass="PlayerVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hSg-40-yTB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tGj-1C-hGA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="obm-oF-5IP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMg-MN-dfC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3361" y="1328"/>
+        </scene>
+        <!--RecipeTBC-->
+        <scene sceneID="hkL-Vn-eBW">
+            <objects>
+                <tabBarController storyboardIdentifier="RecipeTBC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3m5-T0-dad" customClass="RecipeTBC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="YNB-sw-lHi"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dtE-f9-oQw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="I9i-1a-ivO" kind="relationship" relationship="viewControllers" id="dvN-yh-L5N"/>
+                        <segue destination="J7P-gV-ymM" kind="relationship" relationship="viewControllers" id="oUQ-Ll-bTK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5A-lt-2aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704" y="549"/>
+        </scene>
     </scenes>
     <resources>
         <image name="desert" width="300" height="168"/>
@@ -522,6 +542,6 @@
         <image name="winter" width="254" height="198"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G8j-4H-Ito"/>
+        <segue reference="fKg-NI-6zG"/>
     </inferredMetricsTieBreakers>
 </document>

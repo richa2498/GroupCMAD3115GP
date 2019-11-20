@@ -17,6 +17,9 @@ let BASE_YT_URL_Prefix: String = "https://www.googleapis.com/youtube/v3/search?p
 
 let BASE_YT_URL2_Suffix: String = "&type=video&key=\(API_KEY)"
 
+let YT_PLAY_URL: String = "https://www.youtube.com/embed/"
+//  "https://www.youtube.com/watch?v="
+
 //monsoon :https://www.youtube.com/results?search_query=monsoon+recipes+with+ingredients
 //summer : https://www.youtube.com/results?search_query=summer+recipes+with+ingredients
 //winter : https://www.youtube.com/results?search_query=winter+recipes+with+ingredients
