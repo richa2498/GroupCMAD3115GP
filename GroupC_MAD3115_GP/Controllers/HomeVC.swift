@@ -73,20 +73,24 @@ class HomeVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                   self.morningView.alpha = 0.0
-                   self.eveningView.alpha = 0.0
-                    
+        
+        UIView.animate(withDuration: 0.0, delay: 0.0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
+                        self.monsoonView.alpha = 0.0
+                        self.summerView.alpha =  0.0
+                        self.winterView.alpha =  0.0
+                        self.eveningView.alpha = 0.0
+                        self.morningView.alpha = 0.0
+                        self.fallView.alpha =    0.0
                    }, completion: {
                        (finished: Bool) -> Void in
         
-                       //Once the label is completely invisible, set the text and fade it back in
-        
-                       // Fade in
-                    UIView.animate(withDuration: 1.0, delay: 1.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                           self.morningView.alpha = 1.0
-                           self.eveningView.alpha = 1.0
-                           self.fallView.alpha = 1.0
+                    UIView.animate(withDuration: 0.3, delay: 0.2, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                        self.monsoonView.alpha = 1.0
+                        self.summerView.alpha =  1.0
+                        self.winterView.alpha =  1.0
+                        self.eveningView.alpha = 1.0
+                        self.morningView.alpha = 1.0
+                        self.fallView.alpha =    1.0
                            }, completion: nil)
                })
     }

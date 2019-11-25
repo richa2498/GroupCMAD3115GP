@@ -15,78 +15,86 @@ class RecipeTBC: UITabBarController {
     var url: URL?
     var nameOfRecipe: String?
     var ytVideo: YTVideo?
-
+    
+    @IBOutlet weak var navBar: UINavigationItem!
+    
+    @IBOutlet weak var tab: UITabBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let nav1 = UINavigationController()
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let first: WebVC = mainStoryboard.instantiateViewController(withIdentifier: "Recipe") as! WebVC
+            first.searchVC = searchVC
+            first.nameofRecipe = nameOfRecipe
+            first.url = url
+           nav1.viewControllers = [first]
+           nav1.setNavigationBarHidden(true, animated: true)
+           nav1.title = "Recipe"
+        
+        let nav2 = UINavigationController()
+        let second: VideosTVC = mainStoryboard.instantiateViewController(withIdentifier: "Videos") as! VideosTVC
+        second.searchVC = searchVC
+        
+        nav2.viewControllers = [second]
+        nav2.setNavigationBarHidden(true, animated: true)
+        nav2.title = "Videos"
+        
+        
         DispatchQueue.main.async {
             if self.searchVC != nil{
                 fetchVideos(nameOfRecipe: (self.nameOfRecipe!))
-                
+                self.viewControllers = [nav1, nav2]
             }else{
                 if self.nameOfRecipe != nil{
                     fetchVideos(nameOfRecipe: self.nameOfRecipe!)
+                    self.viewControllers = [nav2]
                 }else{
                     self.dismiss(animated: true, completion: nil)
                 }
             }
         }
 //        print("RECIPETBC: ",url)
-       self.selectedIndex = 1
-       self.onTabChange()
+        self.tabBarController?.view.window!.rootViewController = self.tabBarController
+        tabBarController?.selectedIndex = 0
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let webVC: WebVC = segue.destination as? WebVC{
-//            webVC.searchVC = self.searchVC
-//            webVC.nameofRecipe = searchVC?.tableData[searchVC!.selected]
-//        }
-//
-//        if let videosTVC: VideosTVC = segue.destination as? VideosTVC {
-//            videosTVC.searchVC = self.searchVC
-//            videosTVC.ytVideo = self.ytVideo
-//        }
+
     }
     
-    func onTabChange() {
-        if selectedIndex == 0{
-            let webVC = viewControllers![selectedIndex] as? WebVC
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        navBar.title = item.title
+        switch item.title {
+        case "Recipe":
+            if let webVC = viewControllers![selectedIndex] as? WebVC{
             print("webvc")
-            webVC!.searchVC = self.searchVC
-            webVC?.url = url
-            webVC?.nameofRecipe = nameOfRecipe
-        }
-        
-        if selectedIndex == 1{
-            let videosTVC = viewControllers![selectedIndex] as? VideosTVC
-            print("videotvc")
-            videosTVC!.searchVC = self.searchVC
+                if searchVC != nil{
+                    webVC.searchVC = self.searchVC
+                    webVC.url = url
+                    webVC.nameofRecipe = nameOfRecipe
+                }
+            }
+            return
+
+        case "Videos":
+            if (selectedViewController as? VideosTVC) != nil{
+                let videosTVC = viewControllers![selectedIndex] as? VideosTVC
+                videosTVC!.searchVC = self.searchVC
+            }
+            return
+
+        default:
+            return
         }
     }
+    
 }
-
-//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-//
-//        switch item.title {
-//        case "Recipe":
-//
-//            return
-//
-//        case "Videos":
-//            if let videosTVC = selectedViewController as? VideosTVC{
-//                videosTVC.searchVC = self.searchVC
-//                videosTVC.ytVideo = self.ytVideo
-//            }
-//            return
-//
-//        default:
-//            return
-//        }
-//    }
-
 
 
 /*

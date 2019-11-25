@@ -24,7 +24,7 @@ class SearchVC: UIViewController {
     
 //    var recipe_List = [String]()
 //    var URL_List = [String]()
-    var Ingradients_List = ["onions","garlic","ice","potato","tomato"]
+    var Ingradients_List = [String]()
     
 //    var tableData = [String]()
     var selected = -1

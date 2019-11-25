@@ -20,7 +20,8 @@ class WebVC: UIViewController {
     override func viewDidLoad() {
             super.viewDidLoad()
 //        print("WEBVC: ",url)
-            webView = WKWebView(frame: website_View.frame)
+        
+        webView = WKWebView(frame: website_View.frame)
             view.addSubview(webView!)
             start()
 //            nameofRecipe = (searchVC?.tableData[searchVC!.selected])!

@@ -15,7 +15,8 @@ class MainTBC: UITabBarController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navBar.title = "Make my dish"
+        navigationController?.navigationBar.prefersLargeTitles = true
         // Do any additional setup after loading the view.
     }
 
@@ -29,25 +30,25 @@ class MainTBC: UITabBarController {
     }
     */
 
+    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        navBar.title = item.title
         
         switch item.title {
         case "Home":
             navBar.title = "Make my dish"
-            break
+            return
         
         case "Search":
-            break
+            navBar.title = "Search"
+            return
             
         case "Favourite":
-            break
-            
-        case "Ingredients":
-            break
-            
+            navBar.title = "Favourite"
+            return
+       
         default:
             return
         }
     }
+    
 }

@@ -11,9 +11,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ghb-0w-tx3">
             <objects>
-                <navigationController id="Ylm-jY-fiI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jTD-6X-6D6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <navigationController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ylm-jY-fiI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jTD-6X-6D6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bfT-Ps-eTS">
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5d6-Tq-Rl6">
-                                <rect key="frame" x="20" y="48" width="374" height="32"/>
+                                <rect key="frame" x="20" y="100" width="374" height="32"/>
                                 <segments>
                                     <segment title="Recipes"/>
                                     <segment title="with ingredients"/>
@@ -197,17 +197,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9br-5E-O5P"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="3om-xD-Uzl">
+                    <tabBarItem key="tabBarItem" title="Favourite" image="heart.circle" catalog="system" id="3om-xD-Uzl">
                         <color key="badgeColor" red="0.0032703481340000001" green="0.096575056490000005" blue="0.087732296589999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Favourites⭐️" id="fwm-Aw-CHh"/>
+                    <navigationItem key="navigationItem" id="fwm-Aw-CHh"/>
                     <connections>
                         <outlet property="fvt_TV" destination="0c3-dg-xrq" id="m4e-h2-B6a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrz-Q8-diO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20.289855072463769" y="1087.5"/>
+            <point key="canvasLocation" x="748" y="1293"/>
         </scene>
         <!--Home-->
         <scene sceneID="MFM-OJ-7f9">
@@ -218,14 +218,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WzD-xA-Hdd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WzD-xA-Hdd">
+                                <rect key="frame" x="8" y="104" width="398" height="575"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-6T-4je">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="107.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="91.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHO-YV-emk">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="91.666666666666671"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Monsoon Special">
                                                         <attributes>
@@ -238,18 +238,18 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monsson" translatesAutoresizingMaskIntoConstraints="NO" id="sJ2-Wg-F19">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="107.33333333333333"/>
+                                                <rect key="frame" x="199" y="0.0" width="199" height="91.666666666666671"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8gu-kS-6xa">
-                                        <rect key="frame" x="0.0" y="107.33333333333334" width="414" height="107"/>
+                                        <rect key="frame" x="0.0" y="96.666666666666657" width="398" height="91.666666666666657"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="summer" translatesAutoresizingMaskIntoConstraints="NO" id="mVM-fv-PXL">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="91.666666666666671"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUT-t7-CQj">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="107"/>
+                                                <rect key="frame" x="199" y="0.0" width="199" height="91.666666666666671"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Summer Special">
                                                         <attributes>
@@ -264,10 +264,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9aI-gL-zcU">
-                                        <rect key="frame" x="0.0" y="214.33333333333334" width="414" height="107.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="193.33333333333331" width="398" height="91.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zL-EW-k9X">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="91.666666666666671"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Winter Special">
                                                         <attributes>
@@ -280,18 +280,18 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winter" translatesAutoresizingMaskIntoConstraints="NO" id="LEl-GW-Lve">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="107.33333333333333"/>
+                                                <rect key="frame" x="199" y="0.0" width="199" height="91.666666666666671"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TFf-uu-Jwe">
-                                        <rect key="frame" x="0.0" y="321.66666666666669" width="414" height="107"/>
+                                        <rect key="frame" x="0.0" y="290" width="398" height="91.666666666666686"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pot" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-4I-Vgg">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="91.666666666666671"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8o-6O-V29">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="107"/>
+                                                <rect key="frame" x="199" y="0.0" width="199" height="91.666666666666671"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Fall Special">
                                                         <attributes>
@@ -306,17 +306,17 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xry-A0-BTU">
-                                        <rect key="frame" x="0.0" y="428.66666666666669" width="414" height="107.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="386.66666666666669" width="398" height="91.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmQ-MG-xGr">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="91.666666666666671"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Your morning healper">
                                                         <attributes>
                                                             <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
                                                             <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="🍕">
@@ -324,32 +324,32 @@
                                                             <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="20" name="AppleColorEmoji"/>
                                                             <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning" translatesAutoresizingMaskIntoConstraints="NO" id="VJb-gU-pOi">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="107.33333333333333"/>
+                                                <rect key="frame" x="199" y="0.0" width="199" height="91.666666666666671"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fo1-V3-HtN">
-                                        <rect key="frame" x="0.0" y="536" width="414" height="107"/>
+                                        <rect key="frame" x="0.0" y="483.33333333333343" width="398" height="91.666666666666686"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desert" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-Xw-htD">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="91.666666666666671"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijE-hK-U1b">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="107"/>
+                                                <rect key="frame" x="199" y="0.0" width="199" height="91.666666666666671"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="&quot;Evening mood maker">
                                                         <attributes>
                                                             <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
                                                             <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="🍮">
@@ -357,7 +357,7 @@
                                                             <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="20" name="AppleColorEmoji"/>
                                                             <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="&quot;">
@@ -365,7 +365,7 @@
                                                             <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
                                                             <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -378,14 +378,14 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WzD-xA-Hdd" firstAttribute="leading" secondItem="b6V-Hv-7Jf" secondAttribute="leading" id="5Uk-h4-y3C"/>
-                            <constraint firstItem="WzD-xA-Hdd" firstAttribute="top" secondItem="b6V-Hv-7Jf" secondAttribute="top" id="8kc-Eg-Drv"/>
-                            <constraint firstItem="b6V-Hv-7Jf" firstAttribute="trailing" secondItem="WzD-xA-Hdd" secondAttribute="trailing" id="rxq-CS-WMt"/>
-                            <constraint firstItem="b6V-Hv-7Jf" firstAttribute="bottom" secondItem="WzD-xA-Hdd" secondAttribute="bottom" id="zed-uq-HOw"/>
+                            <constraint firstItem="WzD-xA-Hdd" firstAttribute="leading" secondItem="b6V-Hv-7Jf" secondAttribute="leading" constant="8" id="5Uk-h4-y3C"/>
+                            <constraint firstItem="WzD-xA-Hdd" firstAttribute="top" secondItem="b6V-Hv-7Jf" secondAttribute="top" constant="8" id="8kc-Eg-Drv"/>
+                            <constraint firstItem="b6V-Hv-7Jf" firstAttribute="trailing" secondItem="WzD-xA-Hdd" secondAttribute="trailing" constant="8" id="rxq-CS-WMt"/>
+                            <constraint firstItem="b6V-Hv-7Jf" firstAttribute="bottom" secondItem="WzD-xA-Hdd" secondAttribute="bottom" constant="8" id="zed-uq-HOw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b6V-Hv-7Jf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="house.fill" catalog="system" selectedImage="house.fill" id="2Xn-fU-3hf">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="2Xn-fU-3hf">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -406,8 +406,8 @@
         <scene sceneID="GdI-gg-kE1">
             <objects>
                 <tabBarController title="MainTBC" id="Qif-Zy-cHK" customClass="MainTBC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Make My Dish" id="UPc-sI-def">
-                        <barButtonItem key="backBarButtonItem" title="Home" id="3kp-FU-7MH"/>
+                    <navigationItem key="navigationItem" id="UPc-sI-def">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="3kp-FU-7MH"/>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="NSO-DJ-XSZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -430,13 +430,13 @@
         <!--Recipe-->
         <scene sceneID="k60-nI-575">
             <objects>
-                <viewController id="I9i-1a-ivO" customClass="WebVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Recipe" title="Recipe" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I9i-1a-ivO" customClass="WebVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="52W-E8-CAt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-at-BPe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="16" width="414" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -444,7 +444,7 @@
                         <constraints>
                             <constraint firstItem="u5F-at-BPe" firstAttribute="trailing" secondItem="G9b-9J-Y21" secondAttribute="trailing" id="41d-Fz-jp6"/>
                             <constraint firstItem="G9b-9J-Y21" firstAttribute="bottom" secondItem="u5F-at-BPe" secondAttribute="bottom" id="68B-XT-fHI"/>
-                            <constraint firstItem="u5F-at-BPe" firstAttribute="top" secondItem="G9b-9J-Y21" secondAttribute="top" id="Sjg-VP-gb5"/>
+                            <constraint firstItem="u5F-at-BPe" firstAttribute="top" secondItem="G9b-9J-Y21" secondAttribute="top" constant="16" id="Sjg-VP-gb5"/>
                             <constraint firstItem="u5F-at-BPe" firstAttribute="leading" secondItem="G9b-9J-Y21" secondAttribute="leading" id="SzK-gD-qc5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G9b-9J-Y21"/>
@@ -460,26 +460,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zY3-d9-7lL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2525" y="549"/>
+            <point key="canvasLocation" x="3086" y="1006"/>
         </scene>
         <!--Videos-->
         <scene sceneID="haP-q2-jxt">
             <objects>
-                <tableViewController id="J7P-gV-ymM" customClass="VideosTVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Videos" title="Videos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J7P-gV-ymM" customClass="VideosTVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QmO-Nd-7eE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" id="ZKy-Hb-mHl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VideoCell" id="ZKy-Hb-mHl">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZKy-Hb-mHl" id="rRT-go-Uuh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="pvf-0K-Ckk" kind="show" id="8yj-RB-Ot1"/>
+                                    <segue destination="pvf-0K-Ckk" kind="show" id="9cp-8X-9nn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -492,14 +492,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXN-4I-mXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3361" y="549"/>
+            <point key="canvasLocation" x="4013" y="549"/>
         </scene>
         <!--PlayerVC-->
         <scene sceneID="jZL-rg-pga">
             <objects>
                 <viewController id="pvf-0K-Ckk" customClass="PlayerVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hSg-40-yTB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tGj-1C-hGA"/>
@@ -508,31 +508,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMg-MN-dfC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3361" y="1328"/>
+            <point key="canvasLocation" x="4014" y="1363"/>
         </scene>
         <!--RecipeTBC-->
         <scene sceneID="hkL-Vn-eBW">
             <objects>
                 <tabBarController storyboardIdentifier="RecipeTBC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3m5-T0-dad" customClass="RecipeTBC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="YNB-sw-lHi"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="YNB-sw-lHi"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dtE-f9-oQw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="I9i-1a-ivO" kind="relationship" relationship="viewControllers" id="dvN-yh-L5N"/>
-                        <segue destination="J7P-gV-ymM" kind="relationship" relationship="viewControllers" id="oUQ-Ll-bTK"/>
+                        <outlet property="navBar" destination="YNB-sw-lHi" id="h4N-Tx-6qp"/>
+                        <outlet property="tab" destination="dtE-f9-oQw" id="o4I-Qx-M51"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5A-lt-2aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="549"/>
+            <point key="canvasLocation" x="1903" y="1006"/>
         </scene>
     </scenes>
     <resources>
         <image name="desert" width="300" height="168"/>
+        <image name="heart.circle" catalog="system" width="64" height="60"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="monsson" width="318" height="159"/>
