@@ -13,7 +13,7 @@ struct Recipes: Codable {
     let title: String
     let version: Double
     let href: String
-    let results: [Result]
+    var results: [Result]
 }
 
 // MARK: - Result

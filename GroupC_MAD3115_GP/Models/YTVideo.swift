@@ -12,7 +12,7 @@ import Foundation
 struct YTVideo: Codable {
     let kind, etag, nextPageToken, regionCode: String
     let pageInfo: PageInfo
-    let items: [Item]
+    var items: [Item]
 }
 
 // MARK: - Item

@@ -19,7 +19,7 @@ class WebVC: UIViewController {
     @IBOutlet weak var website_View: UIView!
     override func viewDidLoad() {
             super.viewDidLoad()
-        print("WEBVC: ",url)
+//        print("WEBVC: ",url)
             webView = WKWebView(frame: website_View.frame)
             view.addSubview(webView!)
             start()

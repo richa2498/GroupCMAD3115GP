@@ -20,17 +20,18 @@ class SearchVC: UIViewController {
     @IBOutlet weak var segment_search: UISegmentedControl!
     @IBOutlet weak var searchTV: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    var recipes: Recipes?
     
-    var recipe_List = [String]()
-    var URL_List = [String]()
-    var Ingradients_List = ["onions","garlic","ice","potato","tomato"]//[String]()
+//    var recipe_List = [String]()
+//    var URL_List = [String]()
+    var Ingradients_List = ["onions","garlic","ice","potato","tomato"]
     
-    var tableData = [String]()
+//    var tableData = [String]()
     var selected = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         searchTV.allowsMultipleSelection = true
         searchBar.isHidden = true
         search_btn.isHidden = false
@@ -40,25 +41,17 @@ class SearchVC: UIViewController {
         start()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        searchTV.reloadData()
+    }
+    
     func start() {
         searchBar.delegate = self
-        tableData = Ingradients_List
+//        tableData = Ingradients_List
         searchTV.reloadData()
     
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        /*
-        searchTV.allowsMultipleSelection = true
-        searchBar.isHidden = true
-        search_btn.isHidden = false
-        add_Ingradient.isHidden = false
-        segment_search.selectedSegmentIndex = 1
-        
-        start()*/
-    }
-    
-
     //  MARK: Actions
     @IBAction func onSegmentChange(_ sender: UISegmentedControl) {
         
@@ -67,20 +60,17 @@ class SearchVC: UIViewController {
             search_btn.isHidden = true
             add_Ingradient.isHidden = true
             searchBar.isHidden = false
-            tableData = recipe_List
-             
+//            tableData = recipe_List
         }
         else{
             
             search_btn.isHidden = false
             add_Ingradient.isHidden = false
             searchBar.isHidden = true
-            tableData = Ingradients_List
+//            tableData = Ingradients_List
             
         }
         searchTV.reloadData()
-        
-        
     }
    
     func fetchRecipes(searchFor: String) {
@@ -93,18 +83,8 @@ class SearchVC: UIViewController {
                         do {
                                 let recipes = try JSONDecoder().decode(Recipes.self, from: data!)
 
-                                
-                                recipes.results.forEach { (r) in
-                                    var name = r.title.replacingOccurrences(of: "\n", with: "")
-                                    name = name.replacingOccurrences(of: "\t", with: "")
-                                    name = name.replacingOccurrences(of: "\r", with: "")
-                                    
-                                    self.recipe_List.append(name)
-                                //self.tableData.append(r.title)
-                                self.URL_List.append(r.href)
-                                
-                                    
-                                }
+                            self.recipes = recipes
+
                             } catch{
                                 print(error)
                             }
@@ -113,9 +93,6 @@ class SearchVC: UIViewController {
                 }
             }.resume()
         }
-        
-        
-        
     }
     
     @IBAction func addItem(_ sender: UIButton) {
@@ -138,7 +115,7 @@ class SearchVC: UIViewController {
             
             let item = aC.textFields![0].text
             var nameTaken: Bool = false
-                for ingradient in self.Ingradients_List{
+                for ingradient in self.Ingradients_List {
                 if item == ingradient { nameTaken = true; break }
             }
             if nameTaken {
@@ -148,7 +125,7 @@ class SearchVC: UIViewController {
             }
             else{
                 self.Ingradients_List.append(item!)
-                self.tableData = self.Ingradients_List
+//                self.tableData = self.Ingradients_List
                 self.searchTV.reloadData()
             }
         }
@@ -159,8 +136,6 @@ class SearchVC: UIViewController {
          aC.addAction(cancel)
          aC.addAction(addItem)
          self.present(aC, animated: true, completion: nil)
-        
-        
     }
     
     func nameTakenAlert(){
@@ -177,20 +152,17 @@ class SearchVC: UIViewController {
     
     @IBAction func searchBtn(_ sender: UIButton) {
         
-        recipe_List = []
-        tableData = []
+//        recipe_List = []
+//        tableData = []
         var selected_items = "?i="
         segment_search.selectedSegmentIndex = 0
-        
-        
+        searchBar.text = nil
         
         if let selected_ip = searchTV.indexPathsForSelectedRows{
         for ip in selected_ip{
             
             if ip.row > 0 {selected_items += ","}
             selected_items += Ingradients_List[ip.row]
-            
-            
         }
         
         fetchRecipes(searchFor: selected_items)
@@ -199,22 +171,16 @@ class SearchVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             
-            
             self.search_btn.isHidden = true
             self.add_Ingradient.isHidden = true
             self.searchBar.isHidden = false
-            
-            self.tableData = self.recipe_List
+
+//            self.tableData = self.recipe_List
             
             self.searchTV.reloadData()
             
             }
-            
         }
-        
-        
-        
-        
     }
     
     // MARK: - Navigation
@@ -228,65 +194,65 @@ class SearchVC: UIViewController {
 //            web.source = "search"
 //        }
         
+        
+        
         if let cell_selected = sender as? UITableViewCell{
         
             let selected_row = searchTV.indexPath(for: cell_selected)!.row
             
-            for i in recipe_List.indices{
-                
-                if tableData[selected_row] == recipe_List[i]{
+            for i in (recipes?.results.indices)!{
+                if recipes?.results[selected_row].title == recipes?.results[i].title{
                     selected = i
-                    
                 }
-                
             }
         }
         
         if let recipeTBC = segue.destination as? RecipeTBC{
             recipeTBC.searchVC = self
-            recipeTBC.url = URL(string: URL_List[selected])
-            recipeTBC.nameOfRecipe = tableData[selected]
+            recipeTBC.url = URL(string: (recipes?.results[selected].href)!)
+            recipeTBC.nameOfRecipe = recipes?.results[selected].title
         }
+        fetchVideos(nameOfRecipe: (recipes?.results[selected].title)!)
     }
     
-
 }
+
 
 //  TableView delegates & datasource
 extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
+        
+        return (segment_search.selectedSegmentIndex == 0 ? (recipes?.results.count ?? 0) : Ingradients_List.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let id = segment_search.selectedSegmentIndex == 0 ? "RecipeCell" : "IngradientCell"
+        
         if let cell = searchTV.dequeueReusableCell(withIdentifier: id){
-            
-            let data = tableData[indexPath.row]
-            
-            
+           
             //data = data.replacingOccurrences(of: "\n", with: "")
-            cell.textLabel?.text = data
             if segment_search.selectedSegmentIndex == 0{
+                let data = recipes?.results[indexPath.row]
+                cell.textLabel?.text = data?.title
                 cell.accessoryType = .detailButton
                 cell.imageView?.image = UIImage(named: "fvt")
-                
             }
             else{
+                cell.textLabel?.text = Ingradients_List[indexPath.row]
                 cell.accessoryType = .none
             }
-            
+        
             return cell
-            
-            
         }
         
         return UITableViewCell()
     }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if segment_search.selectedSegmentIndex == 1{
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark}
         else{
@@ -294,9 +260,9 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
             
             var isFav = false
             
-            for f in fvt.fvt_recepie{
+            for f in fav_results{
                 
-                if f == tableData[indexPath.row]{
+                if f.title == (self.recipes?.results[indexPath.row])?.title{
                     isFav = true
                     break
                 }
@@ -305,16 +271,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
             
             if !isFav{
                 
-                fvt.fvt_recepie.append(tableData[indexPath.row])
-                
-                for i in recipe_List.indices{
-                    if recipe_List[i] == tableData[indexPath.row]{
-                        
-                        fvt.fvt_URL.append(URL_List[i])
-                        
-                    }
-                }
-                
+                fav_results.append((recipes?.results[indexPath.row])!)
             }
                 
             }
@@ -328,19 +285,17 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         else{
             tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "fvt")
             
-            for i in fvt.fvt_recepie.indices{
+            for i in fav_results.indices{
                 
-                if (tableData[indexPath.row] == fvt.fvt_recepie[i]){
-                    fvt.fvt_recepie.remove(at: i); break}
-                
+                if (recipes?.results[indexPath.row].title == fav_results[i].title){
+                    fav_results.remove(at: i);
+                    break
+                }
             }
-            
-            
         }
     }
-    
-    
 }
+ 
 
 //  Searchbar delegates & datasource
 extension SearchVC: UISearchBarDelegate{
@@ -383,19 +338,40 @@ extension SearchVC: UISearchBarDelegate{
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        tableData = recipe_List
+        recipes = nil
         searchTV.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        tableData = searchText.isEmpty ? recipe_List : recipe_List.filter { (item: String) -> Bool in
-                
-            
-            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-            }
-            
-            searchTV.reloadData()
+        if !searchText.isEmpty{
+            searchItem(str: searchText)
+        }
     }
     
+    func searchItem(str : String) {
+        if var rec = self.recipes {
+            let results: [Result] = (str.isEmpty ? rec.results : recipes?.results.filter({ (res) -> Bool in
+                    res.title.lowercased(with: .current).contains(str.lowercased())
+                }))!
+            rec.results = results
+            self.recipes = rec
+            fetchVideos(nameOfRecipe: str)
+        
+            searchTV.reloadData()
+        }
+    }
     
 }
+
+/*
+override func viewDidAppear(_ animated: Bool) {
+    searchTV.allowsMultipleSelection = true
+    searchBar.isHidden = true
+    search_btn.isHidden = false
+    add_Ingradient.isHidden = false
+    segment_search.selectedSegmentIndex = 1
+    
+    start()
+ }
+
+ */

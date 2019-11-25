@@ -212,177 +212,177 @@
         <!--Home-->
         <scene sceneID="MFM-OJ-7f9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKw-3j-rsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Home" id="wWi-9n-EwP" customClass="HomeVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dzq-L5-8P6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monsson" translatesAutoresizingMaskIntoConstraints="NO" id="ErI-RX-Hbw">
-                                <rect key="frame" x="20" y="89" width="163" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="summer" translatesAutoresizingMaskIntoConstraints="NO" id="LIY-aG-064">
-                                <rect key="frame" x="224" y="108" width="163" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-lI-gde">
-                                <rect key="frame" x="226" y="80" width="159" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Summer Special">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="20" name="SFMono-Bold"/>
-                                            <font key="NSOriginalFont" size="20" name="Palatino-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="winter" translatesAutoresizingMaskIntoConstraints="NO" id="Qfv-IT-7Au">
-                                <rect key="frame" x="20" y="254" width="163" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0P-xO-HxF">
-                                <rect key="frame" x="226" y="225" width="161" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="&quot;Fall Special&quot;">
-                                        <attributes>
-                                            <color key="NSColor" red="0.099197742118718554" green="0.42205715673575128" blue="0.037270443880165031" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgA-KN-BLF">
-                                <rect key="frame" x="20" y="225" width="161" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="&quot;Winter Special&quot;">
-                                        <attributes>
-                                            <color key="NSColor" red="0.66798898959999997" green="0.17490099140000001" blue="0.096504903579999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pot" translatesAutoresizingMaskIntoConstraints="NO" id="az1-ql-jh1">
-                                <rect key="frame" x="224" y="254" width="163" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H76-a0-mt1">
-                                <rect key="frame" x="22" y="80" width="159" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Monsoon Special">
-                                        <attributes>
-                                            <color key="NSColor" red="0.13108475548529389" green="0.094699101995032703" blue="0.59362856217616589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SnellRoundhand-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wb-cf-yrd">
-                                <rect key="frame" x="20" y="547" width="367" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WzD-xA-Hdd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="desert" translatesAutoresizingMaskIntoConstraints="NO" id="eis-Zr-DJA">
-                                        <rect key="frame" x="8" y="-8" width="176" height="143"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qte-3r-hO9">
-                                        <rect key="frame" x="232" y="0.0" width="135" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="&quot;Evening mood maker">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
-                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="🍮">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="AppleColorEmoji"/>
-                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="&quot;">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
-                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-6T-4je">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="107.33333333333333"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHO-YV-emk">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107.33333333333333"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Monsoon Special">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.13108475548529389" green="0.094699101995032703" blue="0.59362856217616589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="SnellRoundhand-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monsson" translatesAutoresizingMaskIntoConstraints="NO" id="sJ2-Wg-F19">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="107.33333333333333"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8gu-kS-6xa">
+                                        <rect key="frame" x="0.0" y="107.33333333333334" width="414" height="107"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="summer" translatesAutoresizingMaskIntoConstraints="NO" id="mVM-fv-PXL">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUT-t7-CQj">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="107"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Summer Special">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="20" name="SnellRoundhand-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9aI-gL-zcU">
+                                        <rect key="frame" x="0.0" y="214.33333333333334" width="414" height="107.33333333333334"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zL-EW-k9X">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107.33333333333333"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Winter Special">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.13108475548529389" green="0.094699101995032703" blue="0.59362856217616589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="SnellRoundhand-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winter" translatesAutoresizingMaskIntoConstraints="NO" id="LEl-GW-Lve">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="107.33333333333333"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TFf-uu-Jwe">
+                                        <rect key="frame" x="0.0" y="321.66666666666669" width="414" height="107"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pot" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-4I-Vgg">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8o-6O-V29">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="107"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Fall Special">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.099197742118718554" green="0.42205715673575128" blue="0.037270443880165031" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xry-A0-BTU">
+                                        <rect key="frame" x="0.0" y="428.66666666666669" width="414" height="107.33333333333331"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmQ-MG-xGr">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107.33333333333333"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Your morning healper">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
+                                                            <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="🍕">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="AppleColorEmoji"/>
+                                                            <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning" translatesAutoresizingMaskIntoConstraints="NO" id="VJb-gU-pOi">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="107.33333333333333"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fo1-V3-HtN">
+                                        <rect key="frame" x="0.0" y="536" width="414" height="107"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="desert" translatesAutoresizingMaskIntoConstraints="NO" id="8tF-Xw-htD">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="107"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijE-hK-U1b">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="107"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="&quot;Evening mood maker">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
+                                                            <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="🍮">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="AppleColorEmoji"/>
+                                                            <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="&quot;">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.2648356541450777" green="0.12727893287809847" blue="0.055033036849199003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="20" name="MarkerFelt-Wide"/>
+                                                            <font key="NSOriginalFont" size="20" name="MarkerFelt-Wide"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="ida-AH-BcC">
-                                <rect key="frame" x="22" y="411" width="365" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="morning" translatesAutoresizingMaskIntoConstraints="NO" id="06f-mm-ekK">
-                                        <rect key="frame" x="-7" y="-8" width="197" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-dH-TYL">
-                                        <rect key="frame" x="230" y="8" width="135" height="112"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="&quot;">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Your morning healper">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
-                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="🍕">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="AppleColorEmoji"/>
-                                                    <font key="NSOriginalFont" size="20" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="&quot;">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.10865246218839153" green="0.78432292236112744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <viewLayoutGuide key="safeArea" id="N4F-GA-TID"/>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WzD-xA-Hdd" firstAttribute="leading" secondItem="b6V-Hv-7Jf" secondAttribute="leading" id="5Uk-h4-y3C"/>
+                            <constraint firstItem="WzD-xA-Hdd" firstAttribute="top" secondItem="b6V-Hv-7Jf" secondAttribute="top" id="8kc-Eg-Drv"/>
+                            <constraint firstItem="b6V-Hv-7Jf" firstAttribute="trailing" secondItem="WzD-xA-Hdd" secondAttribute="trailing" id="rxq-CS-WMt"/>
+                            <constraint firstItem="b6V-Hv-7Jf" firstAttribute="bottom" secondItem="WzD-xA-Hdd" secondAttribute="bottom" id="zed-uq-HOw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b6V-Hv-7Jf"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="house.fill" catalog="system" selectedImage="house.fill" id="2Xn-fU-3hf">
@@ -390,16 +390,17 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="desert_img" destination="eis-Zr-DJA" id="6Lp-op-8ES"/>
-                        <outlet property="evening" destination="Qte-3r-hO9" id="2e2-qO-3Nu"/>
+                        <outlet property="eveningView" destination="fo1-V3-HtN" id="cOS-wb-Vhj"/>
+                        <outlet property="fallView" destination="TFf-uu-Jwe" id="aL1-iG-Boz"/>
                         <outlet property="home" destination="2Xn-fU-3hf" id="wfG-mg-4XW"/>
-                        <outlet property="morning" destination="tzw-dH-TYL" id="mwU-Ji-KO6"/>
-                        <outlet property="morning_img" destination="06f-mm-ekK" id="LfT-j1-r6o"/>
+                        <outlet property="monsoonView" destination="RiK-6T-4je" id="fJ1-on-auj"/>
+                        <outlet property="morningView" destination="Xry-A0-BTU" id="Vxe-Um-J8D"/>
+                        <outlet property="summerView" destination="8gu-kS-6xa" id="78h-o0-Z69"/>
+                        <outlet property="winterView" destination="9aI-gL-zcU" id="dgu-I5-wPK"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uKw-3j-rsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="-192"/>
+            <point key="canvasLocation" x="747.82608695652175" y="-192.39130434782609"/>
         </scene>
         <!--MainTBC-->
         <scene sceneID="GdI-gg-kE1">
