@@ -68,31 +68,33 @@ class HomeVC: UIViewController {
         }
 //        print(recipeTBC.nameOfRecipe)
 //        recipeTBC.url = self.url
-        let navController = UINavigationController(rootViewController: recipeTBC)
-        self.navigationController?.present(navController, animated: true, completion: nil)
+//        let navController = UINavigationController(rootViewController: recipeTBC)
+        self.navigationController?.pushViewController(recipeTBC, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        if isFirstLoad{
         UIView.animate(withDuration: 0.0, delay: 0.0, options: UIView.AnimationOptions.transitionFlipFromTop, animations: {
-                        self.monsoonView.alpha = 0.0
-                        self.summerView.alpha =  0.0
-                        self.winterView.alpha =  0.0
-                        self.eveningView.alpha = 0.0
-                        self.morningView.alpha = 0.0
-                        self.fallView.alpha =    0.0
+            self.monsoonView.subviews.first!.alpha = 0.0
+                        self.summerView.subviews.last!.alpha =  0.0
+                        self.winterView.subviews.first!.alpha =  0.0
+                        self.eveningView.subviews.last!.alpha = 0.0
+                        self.morningView.subviews.first!.alpha = 0.0
+                        self.fallView.subviews.last!.alpha =    0.0
                    }, completion: {
                        (finished: Bool) -> Void in
         
-                    UIView.animate(withDuration: 0.3, delay: 0.2, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                        self.monsoonView.alpha = 1.0
-                        self.summerView.alpha =  1.0
-                        self.winterView.alpha =  1.0
-                        self.eveningView.alpha = 1.0
-                        self.morningView.alpha = 1.0
-                        self.fallView.alpha =    1.0
+                    UIView.animate(withDuration: 0.4, delay: 0.4, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                        self.monsoonView.subviews.first!.alpha = 1.0
+                        self.summerView.subviews.last!.alpha =  1.0
+                        self.winterView.subviews.first!.alpha =  1.0
+                        self.eveningView.subviews.last!.alpha = 1.0
+                        self.morningView.subviews.first!.alpha = 1.0
+                        self.fallView.subviews.last!.alpha =    1.0
                            }, completion: nil)
                })
+            isFirstLoad = false
+        }
     }
     
     /*

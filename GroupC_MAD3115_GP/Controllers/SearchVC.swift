@@ -34,7 +34,7 @@ class SearchVC: UIViewController {
     
         searchTV.allowsMultipleSelection = true
         searchBar.isHidden = true
-        search_btn.isHidden = false
+        search_btn.isHidden = true
         add_Ingradient.isHidden = false
         segment_search.selectedSegmentIndex = 1
         
@@ -46,27 +46,28 @@ class SearchVC: UIViewController {
     }
     
     func start() {
+       
+        if let ingredients : [String] = UserDefaults.standard.value(forKey: "INGREDIENTS") as? [String]{
+                Ingradients_List = ingredients
+        }
         searchBar.delegate = self
 //        tableData = Ingradients_List
-        searchTV.reloadData()
-    
+//        searchTV.reloadData()
     }
     
     //  MARK: Actions
     @IBAction func onSegmentChange(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0{
-            
+            searchBar.isHidden = false
             search_btn.isHidden = true
             add_Ingradient.isHidden = true
-            searchBar.isHidden = false
 //            tableData = recipe_List
         }
         else{
-            
+            searchBar.isHidden = true
             search_btn.isHidden = false
             add_Ingradient.isHidden = false
-            searchBar.isHidden = true
 //            tableData = Ingradients_List
             
         }
@@ -125,6 +126,7 @@ class SearchVC: UIViewController {
             }
             else{
                 self.Ingradients_List.append(item!)
+                self.updateIngredients()
 //                self.tableData = self.Ingradients_List
                 self.searchTV.reloadData()
             }
@@ -189,12 +191,6 @@ class SearchVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-//        if let web = segue.destination as? WebVC{
-//            web.d_search = self
-//            web.source = "search"
-//        }
-        
-        
         
         if let cell_selected = sender as? UITableViewCell{
         
@@ -216,7 +212,6 @@ class SearchVC: UIViewController {
     }
     
 }
-
 
 //  TableView delegates & datasource
 extension SearchVC: UITableViewDelegate, UITableViewDataSource{
@@ -254,7 +249,14 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if segment_search.selectedSegmentIndex == 1{
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark}
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            if !tableView.visibleCells.filter({ (c) -> Bool in
+                c.accessoryType == UITableViewCell.AccessoryType.checkmark
+            }).isEmpty {
+                self.search_btn.isHidden = false
+            }
+            
+        }
         else{
             tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "fvt_2")
             
@@ -266,7 +268,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
                     isFav = true
                     break
                 }
-               
             }
             
             if !isFav{
@@ -279,9 +280,16 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
         }
     
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath){
         if segment_search.selectedSegmentIndex == 1{
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none}
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            
+            if tableView.visibleCells.filter({ (c) -> Bool in
+                c.accessoryType == UITableViewCell.AccessoryType.checkmark
+            }).isEmpty {
+                self.search_btn.isHidden = true
+            }
+        }
         else{
             tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "fvt")
             
@@ -293,6 +301,17 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource{
                 }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete: UIContextualAction = UIContextualAction(style: .destructive, title: "Remove") { (act, v, _) in
+            self.Ingradients_List.remove(at: indexPath.row)
+            self.updateIngredients()
+            self.searchTV.reloadData()
+        }
+        
+        return UISwipeActionsConfiguration.init(actions: (self.segment_search.selectedSegmentIndex == 1 ? [delete] : []))
     }
 }
  
@@ -307,9 +326,10 @@ extension SearchVC: UISearchBarDelegate{
         self.fetchRecipeByName(searchFor: "?i=&q=\(searchBar.text!)")
         recipeTBC.nameOfRecipe = searchBar.text
         recipeTBC.url = self.url
-        let navController = UINavigationController(rootViewController: recipeTBC)
 
-        self.navigationController?.present(navController, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(recipeTBC, animated: true)
+        
+        searchTV.reloadData()
     }
     
     func fetchRecipeByName(searchFor: String) {
@@ -361,6 +381,9 @@ extension SearchVC: UISearchBarDelegate{
         }
     }
     
+    func updateIngredients(){
+        UserDefaults.standard.set(Ingradients_List, forKey: "INGREDIENTS")
+    }
 }
 
 /*

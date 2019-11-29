@@ -12,41 +12,37 @@ class VideosTVC: UITableViewController {
 
     var searchVC: SearchVC?
     var selectedItem: Int = -1
+    var videos: YTVideo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         start()
     }
     
     func start() {
+        let seconds = 1.0 // finding recepies message should be displayed
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
         if let video = yt_Videos{
-
+            self.videos = video
+            self.tableView.reloadData()
+        }
         }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (yt_Videos?.items.count ?? 0)
+        return (videos?.items.count ?? 0)
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") {
-            cell.textLabel?.text = yt_Videos?.items[indexPath.row].snippet.title
+            cell.textLabel?.text = videos?.items[indexPath.row].snippet.title
             
-            DispatchQueue.global(qos: .userInitiated).async {
-                do{
-                    let imageData: Data = try Data(contentsOf: URL(string: (yt_Videos?.items[indexPath.row].snippet.thumbnails.high.url)!)!)
-
-                    DispatchQueue.main.async {
-                        let image = UIImage(data: imageData)
-                        cell.imageView?.image = image
-//                        cell.imageView!.sizeToFit()
-                    }
-                }catch{
-                    print("Unable to load data: \(error)")
-                }
+            if let image = UIImage(data: images[indexPath.row]) {
+                cell.imageView?.image =  image
             }
             
             return cell
@@ -101,14 +97,10 @@ class VideosTVC: UITableViewController {
             selectedItem = tableView.indexPath(for: cell)!.row
         }
         if let playerVC = segue.destination as? PlayerVC{
-            if let item: Item = yt_Videos?.items[selectedItem]{
+            if let item: Item = videos?.items[selectedItem]{
                 playerVC.item = item
             }
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
-
 }

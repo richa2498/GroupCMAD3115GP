@@ -22,8 +22,10 @@ class RecipeTBC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tab.backgroundColor = #colorLiteral(red: 0.1458176076, green: 0.1732214689, blue: 0.3447553813, alpha: 1)
         
         let nav1 = UINavigationController()
+        navBar.title = nameOfRecipe
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         let first: WebVC = mainStoryboard.instantiateViewController(withIdentifier: "Recipe") as! WebVC
@@ -57,6 +59,7 @@ class RecipeTBC: UITabBarController {
             }
         }
 //        print("RECIPETBC: ",url)
+        
         self.tabBarController?.view.window!.rootViewController = self.tabBarController
         tabBarController?.selectedIndex = 0
     }

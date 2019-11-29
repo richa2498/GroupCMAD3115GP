@@ -3,7 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +15,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jTD-6X-6D6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.15107023720000001" green="0.1723635197" blue="0.3333496749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.15107023720000001" green="0.1723635197" blue="0.3333496749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bfT-Ps-eTS">
                         <autoresizingMask key="autoresizingMask"/>
@@ -121,7 +127,7 @@
                                     <action selector="searchBtn:" destination="CVn-Th-bL1" eventType="touchUpInside" id="Wnl-Dx-jPZ"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" misplaced="YES" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNm-mP-lfd">
+                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Find Recipe" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNm-mP-lfd">
                                 <rect key="frame" x="0.0" y="96" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -212,7 +218,6 @@
         <!--Home-->
         <scene sceneID="MFM-OJ-7f9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uKw-3j-rsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Home" id="wWi-9n-EwP" customClass="HomeVC" customModule="GroupC_MAD3115_GP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dzq-L5-8P6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -399,6 +404,7 @@
                         <outlet property="winterView" destination="9aI-gL-zcU" id="dgu-I5-wPK"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKw-3j-rsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="-192.39130434782609"/>
         </scene>
@@ -449,7 +455,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G9b-9J-Y21"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recipe" id="QWC-3U-xvS"/>
+                    <tabBarItem key="tabBarItem" title="Recipe" image="globe" catalog="system" id="QWC-3U-xvS">
+                        <color key="badgeColor" red="0.15107023720000001" green="0.1723635197" blue="0.3333496749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="sWy-dk-c2b">
                         <barButtonItem key="backBarButtonItem" title="Recipie" id="E6T-j3-hDS"/>
                     </navigationItem>
@@ -479,7 +487,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="pvf-0K-Ckk" kind="show" id="9cp-8X-9nn"/>
+                                    <segue destination="pvf-0K-Ckk" kind="push" id="ewf-iI-j8G"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -488,7 +496,7 @@
                             <outlet property="delegate" destination="J7P-gV-ymM" id="bz7-Yn-gBV"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Videos" id="3qi-F1-UlU"/>
+                    <tabBarItem key="tabBarItem" title="Videos" image="video.fill" catalog="system" id="3qi-F1-UlU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXN-4I-mXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -519,7 +527,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dtE-f9-oQw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.15107023720000001" green="0.1723635197" blue="0.3333496749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.15107023720000001" green="0.1723635197" blue="0.3333496749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <outlet property="navBar" destination="YNB-sw-lHi" id="h4N-Tx-6qp"/>
@@ -533,6 +543,7 @@
     </scenes>
     <resources>
         <image name="desert" width="300" height="168"/>
+        <image name="globe" catalog="system" width="64" height="60"/>
         <image name="heart.circle" catalog="system" width="64" height="60"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
@@ -541,9 +552,10 @@
         <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="pot" width="275" height="183"/>
         <image name="summer" width="277" height="182"/>
+        <image name="video.fill" catalog="system" width="64" height="40"/>
         <image name="winter" width="254" height="198"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZCd-d5-HWf"/>
+        <segue reference="fKg-NI-6zG"/>
     </inferredMetricsTieBreakers>
 </document>

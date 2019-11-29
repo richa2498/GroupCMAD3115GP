@@ -10,7 +10,8 @@ import Foundation
 
 
     //  MARK: VARIABLES
-
+var isFirstLoad = true
+var fav_urls: [URL] = []
 var fav_results : [Result] = []
 dynamic var yt_Videos : YTVideo? = nil
 
@@ -26,7 +27,7 @@ func fetchVideos(nameOfRecipe: String) {
     
 //    print("fetchVideos : ")
         if let url = URL(string: (BASE_YT_URL_Prefix+"&q="+"\(recipeName.replacingOccurrences(of: " ", with: "%20"))"+BASE_YT_URL2_Suffix)) {
-//        print(url)
+        print("VIDEO URL: ",url)
         URLSession.shared.dataTask(with: url){ (data, response, error) in
             guard data == nil else {
                 if let _ = String(data: data!, encoding: .utf8){
@@ -34,6 +35,7 @@ func fetchVideos(nameOfRecipe: String) {
                     do {
                             let ytVideo = try JSONDecoder().decode(YTVideo.self, from: data!)
                             yt_Videos = ytVideo
+                            loadImage(items: ytVideo.items)
 //                            ytVideo.items.forEach { (i) in
 //                                print(i.snippet.title)
 //                                print(i.snippet.thumbnails.high.url)
@@ -50,10 +52,24 @@ func fetchVideos(nameOfRecipe: String) {
     }
 
 
+func loadImage(items: [Item]) {
+    images = []
+    items.forEach { (item) in
+        DispatchQueue.global(qos: .userInitiated).async {
+            do{
+                let data = try Data(contentsOf: URL(string: (item.snippet.thumbnails.high.url))!)
+                images.append(data)
+            }catch{
+                print("Unable to load data: \(error)")
+            }
+        }
+    }
+}
+
 
     //  MARK: URLS
 let BASE_URL: String = "http://www.recipepuppy.com/api/"
-let API_KEY: String = "AIzaSyBc1_kSg50Pq3-8v9RxQBzxc7G-izAZGRo"
+let API_KEY: String = "AIzaSyDCZf2tqGBbSPs4SFF5x7-7QSWinG_uyN4"
 let BASE_YT_URL_Prefix: String = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50"
 
 //https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=monsoon&type=video&page=1&key=AIzaSyBc1_kSg50Pq3-8v9RxQBzxc7G-izAZGRo

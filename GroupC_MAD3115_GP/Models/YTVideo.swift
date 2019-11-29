@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - YTVideo
 struct YTVideo: Codable {
@@ -84,7 +85,8 @@ struct PageInfo: Codable {
 }
 
 
-
+var images: [Data] = []
+ 
 
 /*
  URL: https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=monsoon&type=video&page=1&key=AIzaSyBc1_kSg50Pq3-8v9RxQBzxc7G-izAZGRo
